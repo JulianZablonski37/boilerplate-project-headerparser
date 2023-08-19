@@ -3,6 +3,7 @@
 
 // init project
 require('dotenv').config();
+var navigator= require('navigator');
 var express = require('express');
 var app = express();
 
