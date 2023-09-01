@@ -3,6 +3,7 @@
 
 // init project
 require('dotenv').config();
+const fetch = require("node-fetch");
 var navigator= require('navigator');
 var express = require('express');
 var app = express();
@@ -26,7 +27,6 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get('/api/whoami',function(req,res){
-  console.log(navigator)
   let agent = navigator.userAgent;
   fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
