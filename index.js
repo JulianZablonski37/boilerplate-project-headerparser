@@ -26,13 +26,14 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get('/api/whoami',function(req,res){
+  console.log(navigator)
   let agent = navigator.userAgent;
   fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
   .then(data => res.json({
     ipaddress: data.ip ,
     language:req.headers['accept-language'],
-    software:agent,
+    software:navigator.userAgent,
   }));
   
 })
